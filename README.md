@@ -80,12 +80,12 @@ Process an event from XML to final focal mechanism:
 
 **Using local XML file:**
 ```bash
-python workflow.py --xml bmg2026gkek.xml --model polarity_model.h5 --output-dir results
+python workflow.py --xml event2026aaaa.xml --model polarity_model.h5 --output-dir results
 ```
 
 **Using remote XML URL:**
 ```bash
-python workflow.py --xml "http://your-seiscomp-server/fdsnws/event/1/query?eventid=bmg2026gkek" --model polarity_model.h5 --output-dir results
+python workflow.py --xml "http://your-seiscomp-server/fdsnws/event/1/query?eventid=event2026aaaa" --model polarity_model.h5 --output-dir results
 ```
 
 This single command will:
@@ -101,7 +101,7 @@ This single command will:
 Check if all required files are present:
 
 ```bash
-python workflow.py --verify-only --event-id bmg2026gkek --output-dir results
+python workflow.py --verify-only --event-id event2026aaa --output-dir results
 ```
 
 ## Workflow Steps
@@ -167,7 +167,7 @@ inafocmec/
 ├── polarity_tf_pipeline.py          # Polarity analysis module
 ├── SKHASH.py                        # SKHASH focal mechanism solver
 ├── config.yaml                      # ⚠️ USER CONFIG - Edit this file
-├── bmg2026gkek.xml                  # Example event XML file
+├── event2026aaaa.xml                  # Example event XML file
 ├── polarity_model.h5                # Pre-trained polarity classification model
 ├── requirements.txt                 # Python dependencies
 ├── functions/                       # Processing functions
@@ -244,7 +244,7 @@ All output files are automatically generated in `results/{event_id}/inafocmec/`
 ### What You Need to Provide
 
 1. **SeisComP XML file or URL** - Event data with:
-   - Can be a local file path (e.g., `bmg2026gkek.xml`)
+   - Can be a local file path (e.g., `event2026aaaa.xml`)
    - Or a remote URL (e.g., `http://server/fdsnws/event/1/query?eventid=...`)
    - Must contain:
      - Origin time
@@ -274,7 +274,7 @@ The pipeline automatically creates:
 
 ```
 --xml PATH/URL      Path to local XML file or remote XML URL (required)
-                    Examples: bmg2026gkek.xml or 
+                    Examples: event2026aaaa.xml or 
                     http://server/fdsnws/event/1/query?eventid=...
 --model PATH        Path to TensorFlow model file .h5 (required)
 --output-dir DIR    Output directory (default: ./results)
@@ -288,7 +288,7 @@ The pipeline automatically creates:
 ### Process with custom configuration
 
 ```bash
-python workflow.py --xml bmg2026gkek.xml --model polarity_model.h5 --output-dir results --config custom_config.yaml
+python workflow.py --xml event2026aaaa.xml --model polarity_model.h5 --output-dir results --config custom_config.yaml
 ```
 
 ### Process event from remote server
