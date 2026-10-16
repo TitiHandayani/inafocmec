@@ -82,8 +82,8 @@ def probabilityToPolarity(probability_value, threshold=0.5):
 
 def getConfusionMatriks(prediction_label, true_label):
     """
-    Melakukan perhitungan performa hasil prediksi dengan nilai yang sebenarnya.\n
-    Mengembalikan nilai sebagai berikut:\n
+    Calculate the stats of prediction result compared with the label data
+    return:
     accuracy, precision, recall, f1_score, confusion_matrix
     """
     TP = FP = TN = FN = 0
