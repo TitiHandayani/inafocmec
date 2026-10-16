@@ -8,9 +8,9 @@ from tqdm import tqdm
 import pandas as pd
 import pickle
 
-# ############################################ #
-# Mengkonversi dataset kedalam format pkl.     #
-# ############################################ #
+# ############################################# #
+# Covert dataset to a pickle file format (.pkl) #
+# ############################################# #
 
 # Load the data
 p_time_list = pd.read_csv("p_time20082024.csv", sep=";")
