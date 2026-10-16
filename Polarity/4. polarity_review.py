@@ -132,7 +132,7 @@ def plot_history(history, title =""):
     
 def plotConfusionMatrix(accuracy,precision,recall,f1_score,confusion_matrix,title=" "):
     """
-    Plot hasil performa model berdasarkan hasil perhitungan matrix
+    Plot model stats result based on matrix calculation
     """
     plt.rcParams.update({'font.size': 15})  # Increase global font size (adjust as needed)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
